@@ -24,7 +24,11 @@ function changePlayer() {
 function click(row, column) {
   board[row][column] = players[activePlayer];
   renderBoard(board);
-  let countEqual = 0;
+  gameProgress();
+}
+
+function gameProgress() {
+    let countEqual = 0;
   for (let j = 0; j < board.length; j++) {
     for (let i = 0; i < board.length; i++) {
       if (board[j][i] === players[activePlayer]) {
